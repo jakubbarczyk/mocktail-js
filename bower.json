@@ -1,0 +1,29 @@
+{
+  "name": "mocktail-js",
+  "description": "A JavaScript library that takes the pain out of mocking deep objects.",
+  "main": "dist/mocktail.min.js",
+  "authors": [
+    "Jakub Barczyk"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bdd",
+    "deep",
+    "library",
+    "mock",
+    "object",
+    "tdd",
+    "test"
+  ],
+  "homepage": "https://github.com/jakubbarczyk/mocktail-js#readme",
+  "ignore": [
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+    ".tmp",
+    "node_modules",
+    "src",
+    "test",
+    "typings"
+  ]
+}

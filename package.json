@@ -1,0 +1,46 @@
+{
+  "name": "mocktail-js",
+  "version": "1.0.0",
+  "description": "A JavaScript library that takes the pain out of mocking deep objects.",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "gulp build",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jakubbarczyk/mocktail-js.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "del": "2.x.x",
+    "gulp": "3.x.x",
+    "gulp-jasmine": "2.x.x",
+    "gulp-load-plugins": "1.x.x",
+    "gulp-rename": "1.x.x",
+    "gulp-tslint": "4.x.x",
+    "gulp-typescript": "2.x.x",
+    "gulp-util": "3.x.x",
+    "tslint": "3.x.x",
+    "typescript": "1.x.x",
+    "typings": "0.x.x"
+  },
+  "keywords": [
+    "bdd",
+    "deep",
+    "library",
+    "mock",
+    "object",
+    "tdd",
+    "test"
+  ],
+  "engines": {
+    "node": ">= 0.8.x"
+  },
+  "author": "Jakub Barczyk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jakubbarczyk/mocktail-js/issues"
+  },
+  "homepage": "https://github.com/jakubbarczyk/mocktail-js#readme"
+}
