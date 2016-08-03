@@ -4,14 +4,16 @@
 
 ## Installation
 
-#### Bower
-```javascript
-bower install mocktail-js
+Install the package with npm:
+
+```shell
+npm install mocktail-js
 ```
 
-#### NPM
+Include it in your project:
+
 ```javascript
-npm install mocktail-js
+import mocktail from 'mocktail-js';
 ```
 
 ## Documentation
