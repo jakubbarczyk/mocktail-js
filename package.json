@@ -1,6 +1,6 @@
 {
   "name": "mocktail-js",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "A JavaScript library that takes the pain out of mocking deep objects.",
   "main": "dist/src/index.js",
   "scripts": {
