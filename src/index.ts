@@ -1,3 +1,3 @@
-import { mocktail } from "./mocktail";
+import {mocktail} from "./mocktail";
 
 export = mocktail;

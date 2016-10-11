@@ -1,4 +1,4 @@
-import { parseWidePattern } from "../src/parse-wide-pattern";
+import {parseWidePattern} from "../src/parse-wide-pattern";
 
 describe("Mocktail Expression Language", () => {
     describe("parseWidePatterns", () => {

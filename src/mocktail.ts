@@ -1,7 +1,7 @@
-import { Fork } from "./fork";
-import { parseDeepPattern } from "./parse-deep-pattern";
-import { parseForkPattern } from "./parse-fork-pattern";
-import { parseWidePattern } from "./parse-wide-pattern";
+import {Fork} from "./fork";
+import {parseDeepPattern} from "./parse-deep-pattern";
+import {parseForkPattern} from "./parse-fork-pattern";
+import {parseWidePattern} from "./parse-wide-pattern";
 
 export function mocktail(objectPattern: string, ...nestedValue: any[]): Object {
     let forks: Fork[] = parseForkPattern(objectPattern),
