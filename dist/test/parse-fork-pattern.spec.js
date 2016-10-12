@@ -1,3 +1,4 @@
+/// <reference path="../typings/index.d.ts" />
 "use strict";
 var parse_fork_pattern_1 = require("../src/parse-fork-pattern");
 describe("Mocktail Expression Language", function () {

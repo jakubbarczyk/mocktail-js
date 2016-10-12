@@ -2,6 +2,13 @@
 var parse_deep_pattern_1 = require("./parse-deep-pattern");
 var parse_fork_pattern_1 = require("./parse-fork-pattern");
 var parse_wide_pattern_1 = require("./parse-wide-pattern");
+/**
+ * Mocks a JavaScript object off of the provided pattern.
+ *
+ * @param objectPattern {String} the pattern off of which a mock object is built
+ * @param nestedValue {*} the value/-s to be assigned to the nested keys
+ * @returns {Object} the object parsed from the objectPattern
+ */
 function mocktail(objectPattern) {
     var nestedValue = [];
     for (var _i = 1; _i < arguments.length; _i++) {

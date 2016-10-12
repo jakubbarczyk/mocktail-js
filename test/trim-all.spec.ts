@@ -1,3 +1,5 @@
+/// <reference path="../typings/index.d.ts" />
+
 import {trimAll} from "../src/trim-all";
 
 describe("trimAll", () => {

@@ -11,7 +11,7 @@ export function parseForkPattern(objectPattern: string): Fork[] {
     const forkPattern: RegExp = /([a-z.]*):[a-z.,]*;/;
 
     let forks: Fork[] = [],
-        fork: string[] = [];
+        fork: RegExpExecArray;
 
     const trimAllCommas = trimAll(","),
         trimAllSemicolons = trimAll(";");

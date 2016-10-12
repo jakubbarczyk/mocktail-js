@@ -1,3 +1,4 @@
+/// <reference path="../typings/index.d.ts" />
 "use strict";
 var trim_all_1 = require("../src/trim-all");
 describe("trimAll", function () {

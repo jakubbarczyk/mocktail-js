@@ -1,3 +1,5 @@
+/// <reference path="../typings/index.d.ts" />
+
 import {mocktail} from "../src/mocktail";
 
 describe("Mocktail Expression Language", () => {

@@ -18,16 +18,16 @@
         "./src/index.ts",
         "./src/mocktail.ts",
         "./test/mocktail.spec.ts",
+        "./src/parse-deep-pattern.ts",
+        "./test/parse-deep-pattern.spec.ts",
         "./src/parse-fork-pattern.ts",
         "./test/parse-fork-pattern.spec.ts",
         "./src/parse-wide-pattern.ts",
         "./test/parse-wide-pattern.spec.ts",
-        "./src/parse-deep-pattern.ts",
-        "./test/parse-deep-pattern.spec.ts",
         "./src/trim-all.ts",
         "./test/trim-all.spec.ts",
-        "./typings/main/ambient/jasmine/index.d.ts",
-        "./typings/main/ambient/jasmine-expect/index.d.ts",
-        "./typings/main/ambient/jasmine-matchers/index.d.ts"
+        "./typings/globals/jasmine/index.d.ts",
+        "./typings/globals/jasmine-expect/index.d.ts",
+        "./typings/globals/jasmine-matchers/index.d.ts"
     ]
 }

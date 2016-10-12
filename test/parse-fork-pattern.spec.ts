@@ -1,3 +1,5 @@
+/// <reference path="../typings/index.d.ts" />
+
 import {parseForkPattern} from "../src/parse-fork-pattern";
 
 describe("Mocktail Expression Language", () => {

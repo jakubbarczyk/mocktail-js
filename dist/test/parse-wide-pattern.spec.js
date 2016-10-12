@@ -1,3 +1,4 @@
+/// <reference path="../typings/index.d.ts" />
 "use strict";
 var parse_wide_pattern_1 = require("../src/parse-wide-pattern");
 describe("Mocktail Expression Language", function () {

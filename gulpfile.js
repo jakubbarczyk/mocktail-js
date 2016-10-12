@@ -38,7 +38,7 @@ function typescriptTask() {
     var tsconfig = plugin.typescript.createProject('./tsconfig.json');
 
     return tsconfig.src()
-        .pipe(plugin.typescript(tsconfig))
+        .pipe(plugin.typescript(tsconfig()))
         .pipe(gulp.dest(config.dist));
 }
 

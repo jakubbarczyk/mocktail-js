@@ -1,3 +1,5 @@
+/// <reference path="../typings/index.d.ts" />
+
 import {parseWidePattern} from "../src/parse-wide-pattern";
 
 describe("Mocktail Expression Language", () => {

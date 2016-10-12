@@ -1,8 +1,10 @@
 {
-  "ambientDevDependencies": {
-    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
-    "jasmine": "registry:dt/jasmine#2.2.0+20160412134438",
-    "jasmine-expect": "registry:dt/jasmine-expect#2.0.0-beta2+20160317120654",
-    "jasmine-matchers": "registry:dt/jasmine-matchers#0.2.1+20160317120654"
-  }
+    "name": "mocktail-js",
+    "dependencies": {},
+    "globalDevDependencies": {
+        "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504",
+        "jasmine": "registry:dt/jasmine#2.5.0+20161003201800",
+        "jasmine-expect": "registry:dt/jasmine-expect#2.0.0-beta2+20160317120654",
+        "jasmine-matchers": "registry:dt/jasmine-matchers#0.2.1+20160317120654"
+    }
 }

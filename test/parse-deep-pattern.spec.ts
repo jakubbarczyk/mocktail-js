@@ -1,3 +1,5 @@
+/// <reference path="../typings/index.d.ts" />
+
 import {parseDeepPattern} from "../src/parse-deep-pattern";
 
 describe("Mocktail Expression Language", () => {
