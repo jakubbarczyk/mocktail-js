@@ -1,13 +1,19 @@
 import {Fork} from "./fork";
 import {trimAll} from "./trim-all";
 
+/**
+ * Parses the so-called `fork` object array off of the provided pattern.
+ *
+ * @param objectPattern {String} the pattern off of which a `fork` object array is parsed
+ * @returns {Object} the parsed `fork` object array
+ */
 export function parseForkPattern(objectPattern: string): Fork[] {
     const forkPattern: RegExp = /([a-z.]*):[a-z.,]*;/;
 
     let forks: Fork[] = [],
         fork: string[] = [];
 
-    let trimAllCommas = trimAll(","),
+    const trimAllCommas = trimAll(","),
         trimAllSemicolons = trimAll(";");
 
     while (forkPattern.test(objectPattern)) {
