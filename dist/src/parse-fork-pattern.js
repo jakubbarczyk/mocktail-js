@@ -1,11 +1,5 @@
 "use strict";
 var trim_all_1 = require("./trim-all");
-/**
- * Parses the so-called `fork` object array off of the provided pattern.
- *
- * @param objectPattern {String} the pattern off of which a `fork` object array is parsed
- * @returns {Object} the parsed `fork` object array
- */
 function parseForkPattern(objectPattern) {
     var forkPattern = /([a-z.]*):[a-z.,]*;/;
     var forks = [], fork;

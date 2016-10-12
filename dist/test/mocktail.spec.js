@@ -1,4 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
 "use strict";
 var mocktail_1 = require("../src/mocktail");
 describe("Mocktail Expression Language", function () {

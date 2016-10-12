@@ -4,9 +4,9 @@ var gulp = require('gulp'),
     plugin = require('gulp-load-plugins')(),
     clean = require('del'),
     config = {
-        'dist': './dist',
-        'src': './src',
-        'test': './test'
+        dist: './dist',
+        src: './src',
+        test: './test'
     };
 
 /* Task declarations */
@@ -35,10 +35,10 @@ function jasmineTask() {
 }
 
 function typescriptTask() {
-    var tsconfig = plugin.typescript.createProject('./tsconfig.json');
+    var tsProject = plugin.typescript.createProject('./tsconfig.json'),
+        tsResult = tsProject.src().pipe(tsProject());
 
-    return tsconfig.src()
-        .pipe(plugin.typescript(tsconfig()))
+    return tsResult.js
         .pipe(gulp.dest(config.dist));
 }
 

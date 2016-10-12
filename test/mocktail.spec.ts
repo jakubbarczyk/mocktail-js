@@ -25,7 +25,7 @@ describe("Mocktail Expression Language", () => {
         });
 
         it("should mock off of deep and wide and fork pattern", () => {
-            const objectMock = {foo: {bar: {baz: 123}, ban: 456}, boo: {hoo: 789}, moo: undefined};
+            const objectMock = {foo: {bar: {baz: 123}, ban: 456}, boo: {hoo: 789}, moo: <any> undefined};
             expect(mocktail("foo:bar.baz,ban;boo.hoo,moo", 123, 456, 789)).toEqual(objectMock);
         });
     });
