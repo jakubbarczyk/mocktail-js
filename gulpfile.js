@@ -47,8 +47,8 @@ function tslintTask(path) {
 
     return gulp
         .src(path + '/**/*.ts')
-        .pipe(plugin.tslint())
-        .pipe(plugin.tslint.report('verbose'));
+        .pipe(plugin.tslint({formatter: 'verbose'}))
+        .pipe(plugin.tslint.report());
 }
 
 function tslintSrcTask() {
