@@ -1,6 +1,5 @@
 /* Gulp configuration */
 var gulp = require('gulp'),
-    util = require('gulp-util'),
     plugin = require('gulp-load-plugins')(),
     clean = require('del'),
     config = {
@@ -21,11 +20,8 @@ gulp
     .task('test', ['jasmine']);
 
 /* Task definitions */
-function cleanTask(quiet) {
-    return clean([config.dist + '/**', '!' + config.dist])
-        .then(function (paths) {
-            if (!quiet) util.log('.tmp directory has been cleaned!');
-        });
+function cleanTask() {
+    return clean([config.dist + '/**', '!' + config.dist]);
 }
 
 function jasmineTask() {
