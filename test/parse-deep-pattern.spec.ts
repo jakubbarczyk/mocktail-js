@@ -3,7 +3,7 @@
 import {parseDeepPattern} from "../src/parse-deep-pattern";
 
 describe("Mocktail Expression Language", () => {
-    describe("parseDeepPattern", function () {
+    describe("parseDeepPattern", () => {
         it("should mock shallow object off of provided pattern", () => {
             expect(parseDeepPattern("foo", 123)).toEqual({foo: 123});
         });
