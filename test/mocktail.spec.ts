@@ -4,6 +4,26 @@ import {mocktail} from "../src/mocktail";
 
 describe("Mocktail Expression Language", () => {
     describe("mocktail", () => {
+        it("should return empty object when the argument is undefined", () => {
+            expect(mocktail(undefined)).toEqual({});
+        });
+
+        it("should return empty object when the argument is null", () => {
+            expect(mocktail(null)).toEqual({});
+        });
+
+        it("should return empty object when the argument is number", () => {
+            expect(mocktail(<any>123)).toEqual({});
+        });
+
+        it("should return empty object when the argument is array", () => {
+            expect(mocktail(<any>[])).toEqual({});
+        });
+
+        it("should return empty object when the argument is object", () => {
+            expect(mocktail(<any>{})).toEqual({});
+        });
+
         it("should mock off of deep pattern", () => {
             const objectMock = {foo: {bar: 123}};
             expect(mocktail("foo.bar", 123)).toEqual(objectMock);

@@ -2,6 +2,21 @@
 var mocktail_1 = require("../src/mocktail");
 describe("Mocktail Expression Language", function () {
     describe("mocktail", function () {
+        it("should return empty object when the argument is undefined", function () {
+            expect(mocktail_1.mocktail(undefined)).toEqual({});
+        });
+        it("should return empty object when the argument is null", function () {
+            expect(mocktail_1.mocktail(null)).toEqual({});
+        });
+        it("should return empty object when the argument is number", function () {
+            expect(mocktail_1.mocktail(123)).toEqual({});
+        });
+        it("should return empty object when the argument is array", function () {
+            expect(mocktail_1.mocktail([])).toEqual({});
+        });
+        it("should return empty object when the argument is object", function () {
+            expect(mocktail_1.mocktail({})).toEqual({});
+        });
         it("should mock off of deep pattern", function () {
             var objectMock = { foo: { bar: 123 } };
             expect(mocktail_1.mocktail("foo.bar", 123)).toEqual(objectMock);
