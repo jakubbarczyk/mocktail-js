@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var trim_all_1 = require("../src/trim-all");
 describe("trimAll", function () {
     it("should trim all whitespace", function () {

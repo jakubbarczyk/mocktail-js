@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var parse_fork_pattern_1 = require("../src/parse-fork-pattern");
 describe("Mocktail Expression Language", function () {
     describe("parseForkPattern", function () {

@@ -11,7 +11,7 @@ import {parseWidePattern} from "./parse-wide-pattern";
  * @returns {Object} the object parsed from the objectPattern
  */
 export function mocktail(objectPattern: string, ...nestedValue: any[]): Object {
-    if (typeof objectPattern === 'string' || objectPattern instanceof String) {
+    if (typeof objectPattern === "string" || objectPattern instanceof String) {
         let forks: Fork[] = parseForkPattern(objectPattern),
             wides: Object[] = [],
             deep: Object = {},

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var parse_deep_pattern_1 = require("../src/parse-deep-pattern");
 describe("Mocktail Expression Language", function () {
     describe("parseDeepPattern", function () {

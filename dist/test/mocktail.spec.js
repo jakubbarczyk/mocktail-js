@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var mocktail_1 = require("../src/mocktail");
 describe("Mocktail Expression Language", function () {
     describe("mocktail", function () {

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var parse_wide_pattern_1 = require("../src/parse-wide-pattern");
 describe("Mocktail Expression Language", function () {
     describe("parseWidePatterns", function () {

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var trim_all_1 = require("./trim-all");
 function parseForkPattern(objectPattern) {
     var forkPattern = /([a-z.]*):[a-z.,]*;/;
