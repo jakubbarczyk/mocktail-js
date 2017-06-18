@@ -1,12 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function parseDeepPattern(objectPattern, nestedValue) {
-    var keys = objectPattern.split(".");
-    function evaluate(fieldNames) {
-        return fieldNames.length > 0 ? (_a = {}, _a[fieldNames.shift()] = evaluate(fieldNames), _a) : nestedValue;
-        var _a;
-    }
-    return _a = {}, _a[keys.shift()] = evaluate(keys), _a;
-    var _a;
-}
-exports.parseDeepPattern = parseDeepPattern;
+"use strict";function parseDeepPattern(e,t){function r(e){return e.length>0?(n={},n[e.shift()]=r(e),n):t;var n}var n=e.split(".");return s={},s[n.shift()]=r(n),s;var s}Object.defineProperty(exports,"__esModule",{value:!0}),exports.parseDeepPattern=parseDeepPattern;

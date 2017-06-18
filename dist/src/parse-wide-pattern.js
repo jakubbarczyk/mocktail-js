@@ -1,6 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function parseWidePattern(objectPattern) {
-    return objectPattern.split(",");
-}
-exports.parseWidePattern = parseWidePattern;
+"use strict";function parseWidePattern(e){return e.split(",")}Object.defineProperty(exports,"__esModule",{value:!0}),exports.parseWidePattern=parseWidePattern;

@@ -16,7 +16,8 @@ gulp
     .task('tslint', tslintTask)
     .task('tslint:src', tslintSrcTask)
     .task('tslint:test', tslintTestTask)
-    .task('build', ['typescript'])
+    .task('uglifyjs', ['typescript'], uglifyjsTask)
+    .task('build', ['uglifyjs'])
     .task('test', ['jasmine']);
 
 /* Task definitions */
@@ -25,8 +26,7 @@ function cleanTask() {
 }
 
 function jasmineTask() {
-    return gulp
-        .src(config.dist + '/test/**/*.spec.js')
+    return gulp.src(config.dist + '/test/**/*.spec.js')
         .pipe(plugin.jasmine());
 }
 
@@ -41,8 +41,7 @@ function typescriptTask() {
 function tslintTask(path) {
     path = typeof path === 'string' ? path : './{src,test}';
 
-    return gulp
-        .src(path + '/**/*.ts')
+    return gulp.src(path + '/**/*.ts')
         .pipe(plugin.tslint({formatter: 'verbose'}))
         .pipe(plugin.tslint.report());
 }
@@ -53,4 +52,10 @@ function tslintSrcTask() {
 
 function tslintTestTask() {
     return tslintTask(config.test);
+}
+
+function uglifyjsTask() {
+    return gulp.src(config.dist + '/**/*.js')
+        .pipe(plugin.uglify())
+        .pipe(gulp.dest(config.dist));
 }

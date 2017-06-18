@@ -1,18 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var trim_all_1 = require("./trim-all");
-function parseForkPattern(objectPattern) {
-    var forkPattern = /([a-z.]*):[a-z.,]*;/;
-    var forks = [], fork;
-    var trimAllCommas = trim_all_1.trimAll(","), trimAllSemicolons = trim_all_1.trimAll(";");
-    while (forkPattern.test(objectPattern)) {
-        fork = forkPattern.exec(objectPattern);
-        objectPattern = objectPattern.replace(fork[0], "");
-        forks.push({ key: fork[1], value: trimAllSemicolons(fork[0].replace(fork[1] + ":", "")) });
-    }
-    if (objectPattern.length) {
-        forks.push({ key: null, value: trimAllCommas(objectPattern) });
-    }
-    return forks;
-}
-exports.parseForkPattern = parseForkPattern;
+"use strict";function parseForkPattern(e){for(var r,t=/([a-z.]*):[a-z.,]*;/,l=[],a=trim_all_1.trimAll(","),s=trim_all_1.trimAll(";");t.test(e);)r=t.exec(e),e=e.replace(r[0],""),l.push({key:r[1],value:s(r[0].replace(r[1]+":",""))});return e.length&&l.push({key:null,value:a(e)}),l}Object.defineProperty(exports,"__esModule",{value:!0});var trim_all_1=require("./trim-all");exports.parseForkPattern=parseForkPattern;
