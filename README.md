@@ -1,4 +1,4 @@
-![MocktailJS](https://s17.postimg.org/99w97t49r/mocktail_js.png)
+<img width="597" src="/mocktail-js.png">
 
 **A JavaScript library that takes the pain out of mocking deep objects.**
 

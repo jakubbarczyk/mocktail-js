@@ -1,17 +1,12 @@
+const leading: (_: string) => RegExp = (char: string) => new RegExp(`^${char}*`);
+const trailing: (_: string) => RegExp = (char: string) => new RegExp(`${char}*$`);
+
 /**
- * Trims all occurrences of the specified character from the front and end of a string.
+ * Trims all leading and trailing occurences of the specified character.
  * This is a curried function.
  *
- * @param character {String} the character to be trimmed
+ * @param char {string} the character to be trimmed
  */
-export const trimAll = (character: string): Function => (value: string): string => {
-    while (value.slice(0, 1) === character) {
-        value = value.slice(1);
-    }
-
-    while (value.slice(-1) === character) {
-        value = value.slice(0, -1);
-    }
-
-    return value;
+export const trimAll = (char: string): (_: string) => string => (value: string): string => {
+    return value.replace(leading(char), "").replace(trailing(char), "");
 };

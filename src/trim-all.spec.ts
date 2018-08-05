@@ -1,6 +1,4 @@
-/// <reference path="../typings/index.d.ts" />
-
-import {trimAll} from "../src/trim-all";
+import {trimAll} from "./trim-all";
 
 describe("trimAll", () => {
     it("should trim all whitespace", () => {

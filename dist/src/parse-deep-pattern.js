@@ -1,1 +1,0 @@
-"use strict";function parseDeepPattern(e,t){function r(e){return e.length>0?(n={},n[e.shift()]=r(e),n):t;var n}var n=e.split(".");return s={},s[n.shift()]=r(n),s;var s}Object.defineProperty(exports,"__esModule",{value:!0}),exports.parseDeepPattern=parseDeepPattern;

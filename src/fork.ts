@@ -1,7 +1,4 @@
-/**
- * Ensures fork object integrity.
- */
 export interface Fork {
-    key: string;
+    key: string | null;
     value: string;
 }

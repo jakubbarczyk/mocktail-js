@@ -1,12 +1,12 @@
 {
   "name": "mocktail-js",
-  "version": "1.8.2",
+  "version": "1.9.0",
   "description": "A JavaScript library that takes the pain out of mocking deep objects.",
-  "main": "dist/src/index.js",
+  "main": "dist/mocktail.js",
   "scripts": {
-    "build": "gulp build",
-    "test": "gulp test",
-    "postinstall": "typings install"
+    "build": "parcel build ./src/mocktail.ts --global mocktail",
+    "test": "jest",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -14,20 +14,27 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "buffer-shims": "~1.0.0",
-    "del": "~2.2.2",
-    "gulp": "~3.9.1",
-    "gulp-jasmine": "~2.4.2",
-    "gulp-load-plugins": "~1.5.0",
-    "gulp-rename": "~1.2.2",
-    "gulp-tslint": "~6.1.3",
-    "gulp-typescript": "~3.1.7",
-    "gulp-uglify": "~3.0.0",
-    "lru-cache": "~4.1.1",
-    "sigmund": "~1.0.1",
-    "tslint": "~3.15.1",
-    "typescript": "~2.4.0",
-    "typings": "~1.5.0"
+    "@types/jest": "^23.3.1",
+    "jest": "^23.1.0",
+    "parcel-bundler": "^1.9.7",
+    "ts-jest": "^23.1.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "testURL": "http://localhost",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   },
   "keywords": [
     "bdd",
@@ -35,6 +42,8 @@
     "library",
     "mock",
     "object",
+    "plain",
+    "spec",
     "tdd",
     "test"
   ],

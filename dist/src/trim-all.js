@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.trimAll=function(e){return function(r){for(;r.slice(0,1)===e;)r=r.slice(1);for(;r.slice(-1)===e;)r=r.slice(0,-1);return r}};
