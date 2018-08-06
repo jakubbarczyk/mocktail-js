@@ -1,12 +1,11 @@
 [![Build Status](https://travis-ci.org/jakubbarczyk/mocktail-js.svg?branch=master)](https://travis-ci.org/jakubbarczyk/mocktail-js)
+[![Greenkeeper badge](https://badges.greenkeeper.io/jakubbarczyk/mocktail-js.svg)](https://greenkeeper.io/)
 
 <img width="597" src="/mocktail-js.png">
 
 **A JavaScript library that takes the pain out of mocking deep objects.**
 
 ## Installation
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/jakubbarczyk/mocktail-js.svg)](https://greenkeeper.io/)
 
 Install the package with npm:
 
