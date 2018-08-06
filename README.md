@@ -6,6 +6,8 @@
 
 ## Installation
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jakubbarczyk/mocktail-js.svg)](https://greenkeeper.io/)
+
 Install the package with npm:
 
 ```shell
