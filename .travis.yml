@@ -1,7 +1,14 @@
-language: javascript
+language: node_js
+
+node_js:
+  - "10"
 
 install:
-  - npm install
+  - npm ci
+
+cache:
+  directories:
+  - "$HOME/.npm"
 
 script:
   - npm run build
