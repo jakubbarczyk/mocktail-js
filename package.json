@@ -1,12 +1,12 @@
 {
   "name": "mocktail-js",
   "version": "1.9.3",
-  "description": "A JavaScript library that takes the pain out of mocking deep objects.",
+  "description": "Painless mocking of deep objects.",
   "main": "dist/mocktail.js",
   "scripts": {
     "build": "parcel build ./src/mocktail.ts --global mocktail",
     "test": "jest",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'"
+    "lint": "eslint ./src --ext .ts"
   },
   "repository": {
     "type": "git",
@@ -14,12 +14,15 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^25.1.1",
-    "jest": "^24.9.0",
-    "parcel-bundler": "^1.12.3",
-    "ts-jest": "^25.1.0",
-    "tslint": "^5.19.0",
-    "typescript": "^3.6.2"
+    "@types/jest": "^26.0.5",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/eslint-plugin-tslint": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "eslint": "^7.5.0",
+    "jest": "^26.1.0",
+    "parcel-bundler": "^1.12.4",
+    "ts-jest": "^26.1.3",
+    "typescript": "^3.9.7"
   },
   "jest": {
     "transform": {
@@ -39,7 +42,6 @@
   "keywords": [
     "bdd",
     "deep",
-    "library",
     "mock",
     "object",
     "plain",

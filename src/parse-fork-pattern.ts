@@ -3,12 +3,9 @@ import { trimAll } from "./trim-all";
 
 /**
  * Parses the so-called `fork` object array off of the provided pattern.
- *
- * @param objectPattern {string} the pattern off of which a `fork` object array is parsed
- * @returns {object} the parsed `fork` object array
  */
 export function parseForkPattern(objectPattern: string): Fork[] {
-    const forkPattern: RegExp = /([a-z.]*):[a-z.,]*;/;
+    const forkPattern = /([a-z.]*):[a-z.,]*;/;
     const trimAllCommas = trimAll(",");
     const trimAllSemicolons = trimAll(";");
     const forks: Fork[] = [];

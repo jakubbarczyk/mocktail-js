@@ -1,5 +1,7 @@
-[![Build Status](https://travis-ci.org/jakubbarczyk/mocktail-js.svg?branch=master)](https://travis-ci.org/jakubbarczyk/mocktail-js)
-[![Greenkeeper badge](https://badges.greenkeeper.io/jakubbarczyk/mocktail-js.svg)](https://greenkeeper.io/)
+[![build](https://travis-ci.org/jakubbarczyk/mocktail-js.svg?branch=master)](https://travis-ci.org/jakubbarczyk/mocktail-js)
+[![dependencies](https://david-dm.org/jakubbarczyk/mocktail-js.svg)](https://david-dm.org/jakubbarczyk/mocktail-js)
+[![npm package](https://badge.fury.io/js/mocktail-js.svg)](https://badge.fury.io/js/mocktail-js)
+[![vulnerabilities](https://snyk.io/test/github/jakubbarczyk/mocktail-js/badge.svg)](https://snyk.io/test/github/jakubbarczyk/mocktail-js)
 
 <img width="597" src="/mocktail-js.png">
 

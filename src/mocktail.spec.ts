@@ -21,6 +21,11 @@ describe("mocktail", () => {
         expect(mocktail({} as any)).toEqual({});
     });
 
+    it("should mock off of shallow pattern", () => {
+        const objectMock = { foo: 123 };
+        expect(mocktail("foo", 123)).toEqual(objectMock);
+    });
+
     it("should mock off of deep pattern", () => {
         const objectMock = { foo: { bar: 123 } };
         expect(mocktail("foo.bar", 123)).toEqual(objectMock);
