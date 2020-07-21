@@ -1,6 +1,6 @@
 {
   "name": "mocktail-js",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "description": "Painless mocking of deep objects.",
   "main": "dist/mocktail.js",
   "scripts": {
