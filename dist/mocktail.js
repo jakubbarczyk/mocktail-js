@@ -1,14 +1,79 @@
-parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcelRequire,u="function"==typeof require&&require;function f(t,n){if(!r[t]){if(!e[t]){var i="function"==typeof parcelRequire&&parcelRequire;if(!n&&i)return i(t,!0);if(o)return o(t,!0);if(u&&"string"==typeof t)return u(t);var c=new Error("Cannot find module '"+t+"'");throw c.code="MODULE_NOT_FOUND",c}p.resolve=function(r){return e[t][1][r]||r},p.cache={};var l=r[t]=new f.Module(t);e[t][0].call(l.exports,p,l,l.exports,this)}return r[t].exports;function p(e){return f(p.resolve(e))}}f.isParcelRequire=!0,f.Module=function(e){this.id=e,this.bundle=f,this.exports={}},f.modules=e,f.cache=r,f.parent=o,f.register=function(r,t){e[r]=[function(e,r){r.exports=t},{}]};for(var c=0;c<t.length;c++)try{f(t[c])}catch(e){i||(i=e)}if(t.length){var l=f(t[t.length-1]);"object"==typeof exports&&"undefined"!=typeof module?module.exports=l:"function"==typeof define&&define.amd?define(function(){return l}):n&&(this[n]=l)}if(parcelRequire=f,i)throw i;return f}({"qM3L":[function(require,module,exports) {
-"use strict";function t(t){return"string"==typeof t||t instanceof String}Object.defineProperty(exports,"__esModule",{value:!0}),exports.isString=void 0,exports.isString=t;
-},{}],"mutH":[function(require,module,exports) {
-"use strict";function e(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function t(t,r){return function t(n){return n.length>0?e({},n.shift(),t(n)):r}(t.split("."))}Object.defineProperty(exports,"__esModule",{value:!0}),exports.parseDeepPattern=void 0,exports.parseDeepPattern=t;
-},{}],"jdy3":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.trimAll=void 0;var e=function(e){return new RegExp("^".concat(e,"*"))},r=function(e){return new RegExp("".concat(e,"*$"))};exports.trimAll=function(t){return function(n){return n.replace(e(t),"").replace(r(t),"")}};
-},{}],"ONfl":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.parseForkPattern=void 0;var e=require("./trim-all");function r(r){for(var t,l=/([a-z.]*):[a-z.,]*;/,a=e.trimAll(","),s=e.trimAll(";"),u=[];l.test(r);)t=l.exec(r),r=r.replace(t[0],""),u.push({key:t[1],value:s(t[0].replace(t[1]+":",""))});return r.length&&u.push({key:null,value:a(r)}),u}exports.parseForkPattern=r;
-},{"./trim-all":"jdy3"}],"dUth":[function(require,module,exports) {
-"use strict";function e(e){return e.split(",")}Object.defineProperty(exports,"__esModule",{value:!0}),exports.parseWidePattern=void 0,exports.parseWidePattern=e;
-},{}],"krg4":[function(require,module,exports) {
-"use strict";function e(e){return n(e)||t(e)||r()}function r(){throw new TypeError("Invalid attempt to spread non-iterable instance")}function t(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}function n(e){if(Array.isArray(e)){for(var r=0,t=new Array(e.length);r<e.length;r++)t[r]=e[r];return t}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.mocktail=void 0;var a=require("./is-string"),i=require("./parse-deep-pattern"),o=require("./parse-fork-pattern"),p=require("./parse-wide-pattern");function s(r){for(var t=arguments.length,n=new Array(t>1?t-1:0),s=1;s<t;s++)n[s-1]=arguments[s];var c={};if(a.isString(r)){var u=o.parseForkPattern(r),f=[],l={};u.forEach(function(r){f=p.parseWidePattern(r.value).map(function(e){return i.parseDeepPattern(e,n.shift())}),l=null===r.key?Object.assign.apply(Object,[{}].concat(e(f))):i.parseDeepPattern(r.key,Object.assign.apply(Object,[{}].concat(e(f)))),Object.assign(c,l)})}return c}exports.mocktail=s;
-},{"./is-string":"qM3L","./parse-deep-pattern":"mutH","./parse-fork-pattern":"ONfl","./parse-wide-pattern":"dUth"}]},{},["krg4"], "mocktail")
-//# sourceMappingURL=/mocktail.js.map
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.mocktail = {}));
+})(this, (function (exports) { 'use strict';
+
+    function isString(value) {
+        return typeof value === "string" || value instanceof String;
+    }
+
+    /**
+     * Parses the so-called `deep` object off of the provided pattern.
+     */
+    function parseDeepPattern(objectPattern, nestedValue) {
+        const keys = objectPattern.split(".");
+        function evaluate(fieldNames) {
+            return fieldNames.length > 0 ? { [fieldNames.shift()]: evaluate(fieldNames) } : nestedValue;
+        }
+        return evaluate(keys);
+    }
+
+    const leading = (char) => new RegExp(`^${char}*`);
+    const trailing = (char) => new RegExp(`${char}*$`);
+    /**
+     * Trims all leading and trailing occurences of the specified character.
+     */
+    const trimAll = (char) => (value) => value.replace(leading(char), "").replace(trailing(char), "");
+
+    /**
+     * Parses the so-called `fork` object array off of the provided pattern.
+     */
+    function parseForkPattern(objectPattern) {
+        const forkPattern = /([a-z.]*):[a-z.,]*;/;
+        const trimAllCommas = trimAll(",");
+        const trimAllSemicolons = trimAll(";");
+        const forks = [];
+        let fork;
+        while (forkPattern.test(objectPattern)) {
+            fork = forkPattern.exec(objectPattern);
+            objectPattern = objectPattern.replace(fork[0], "");
+            forks.push({ key: fork[1], value: trimAllSemicolons(fork[0].replace(fork[1] + ":", "")) });
+        }
+        if (objectPattern.length) {
+            forks.push({ key: null, value: trimAllCommas(objectPattern) });
+        }
+        return forks;
+    }
+
+    /**
+     * Parses the so-called `wide` object string off of the provided pattern.
+     */
+    function parseWidePattern(objectPattern) {
+        return objectPattern.split(",");
+    }
+
+    /**
+     * Mocks a JavaScript object off of the provided pattern.
+     */
+    function mocktail(objectPattern, ...nestedValue) {
+        const mock = {};
+        if (isString(objectPattern)) {
+            const forks = parseForkPattern(objectPattern);
+            let wides = [];
+            let deep = {};
+            forks.forEach((fork) => {
+                wides = parseWidePattern(fork.value).map((wide) => parseDeepPattern(wide, nestedValue.shift()));
+                deep = fork.key === null
+                    ? Object.assign({}, ...wides)
+                    : parseDeepPattern(fork.key, Object.assign({}, ...wides));
+                Object.assign(mock, deep);
+            });
+        }
+        return mock;
+    }
+
+    exports.mocktail = mocktail;
+
+}));
+//# sourceMappingURL=mocktail.js.map

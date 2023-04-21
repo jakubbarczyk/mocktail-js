@@ -7,7 +7,7 @@ import { parseWidePattern } from "./parse-wide-pattern";
 /**
  * Mocks a JavaScript object off of the provided pattern.
  */
-export function mocktail(objectPattern: string, ...nestedValue: unknown[]): Record<string, unknown> {
+export function mocktail(objectPattern: unknown, ...nestedValue: unknown[]): Record<string, unknown> {
     const mock: Record<string, unknown> = {};
 
     if (isString(objectPattern)) {

@@ -2,23 +2,23 @@ import { mocktail } from "./mocktail";
 
 describe("mocktail", () => {
     it("should return empty object when the argument is undefined", () => {
-        expect(mocktail(undefined as any)).toEqual({});
+        expect(mocktail(undefined)).toEqual({});
     });
 
     it("should return empty object when the argument is null", () => {
-        expect(mocktail(null as any)).toEqual({});
+        expect(mocktail(null)).toEqual({});
     });
 
     it("should return empty object when the argument is number", () => {
-        expect(mocktail(123 as any)).toEqual({});
+        expect(mocktail(123)).toEqual({});
     });
 
     it("should return empty object when the argument is array", () => {
-        expect(mocktail([] as any)).toEqual({});
+        expect(mocktail([])).toEqual({});
     });
 
     it("should return empty object when the argument is object", () => {
-        expect(mocktail({} as any)).toEqual({});
+        expect(mocktail({})).toEqual({});
     });
 
     it("should mock off of shallow pattern", () => {
